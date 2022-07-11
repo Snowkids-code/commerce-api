@@ -1,3 +1,4 @@
+//middleware file to verify token
 const jwt = require("jsonwebtoken");
 
 const verifyToken = (req, res, next) => {
@@ -8,6 +9,7 @@ const verifyToken = (req, res, next) => {
     jwt.verify(token, process.env.JWT_SEC, (err, user) => {
       if (err) res.status(403).json("Token is not valid");
 
+      //created req.user
       req.user = user;
       next();
     });
