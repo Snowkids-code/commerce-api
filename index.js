@@ -22,6 +22,7 @@ mongoose
 //allow app to take json data
 app.use(express.json());
 
+//routes
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/products", productRoute);
